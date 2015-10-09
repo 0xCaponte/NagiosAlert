@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="redes3.proyecto.nagiosalert.MainActivity" >
+
+	<TextView
+	    android:id="@+id/status"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/duracion"
+	    android:layout_below="@+id/tvNombreServicio"
+	    android:layout_marginTop="56dp"
+	    android:gravity="center_vertical"
+	    android:text="@string/login"
+	    android:textSize="16sp" />
+
+	<TextView
+	    android:id="@+id/duracion"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/revision"
+	    android:layout_below="@+id/status"
+	    android:layout_marginTop="40dp"
+	    android:gravity="center_vertical"
+	    android:text="@string/login"
+	    android:textSize="16sp" />
+
+	<TextView
+	    android:id="@+id/revision"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/info"
+	    android:layout_below="@+id/duracion"
+	    android:layout_marginTop="40dp"
+	    android:gravity="center_vertical"
+	    android:text="@string/login"
+	    android:textSize="16sp" />
+
+	<TextView
+	    android:id="@+id/info"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/revision"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="42dp"
+	    android:gravity="center_vertical"
+	    android:text="@string/login"
+	    android:textSize="16sp" />
+
+	<TextView
+	    android:id="@+id/tvNombreServicio"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_alignRight="@+id/status"
+	    android:layout_marginRight="38dp"
+	    android:layout_marginTop="39dp"
+	    android:gravity="center"
+	    android:text="@string/login"
+	    android:textColor="#000000"
+	    android:textSize="50sp"
+	    android:textStyle="bold" />
+
+	<ImageView
+	    android:id="@+id/image"
+	    android:layout_width="100sp"
+	    android:layout_height="100sp"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginTop="33dp"
+	    android:layout_marginRight="20sp"
+	    android:layout_toLeftOf="@+id/tvNombreServicio"
+	    android:src="@drawable/fine" />
+		
+</RelativeLayout>

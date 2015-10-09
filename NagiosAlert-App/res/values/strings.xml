@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NagiosAlert</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="nagiosAlert">Nagios Alert</string>
+    
+    <!-- LOGIN -->
+    <string name="login">LOGIN</string>
+    <string name="usuario">Usuario</string>   
+    <string name="contrasena">Contraseña</string>  
+    <string name="loginMin">Login</string>  
+    <string name="ir">Ir</string>  
+    <string name="recordarDatos">Recordar Datos</string>  
+       
+    <!-- HOME -->
+    <string name="administrador">Administrador</string>   
+    <string name="home">Home</string>   
+    <!-- SERVICES -->
+    <string name="refresh">Refresh</string>  
+    
+    <!-- Titulos -->    
+    <string name="services">Listado de Servicios</string>
+    <string name="hosts">Listado de Host</string>
+    <string name="service">Servicio</string>
+    <string name="ajustes">Configuracion</string>    
+    <string name="url">Ingrese el URL para conectarse:</string>     
+
+    <string name="listadoServicio">Ver listado de servicios</string>     
+    <string name="verLog">Ver Log</string>    
+    <string name="logHost">Log - Listado de Hosts</string>     
+</resources>

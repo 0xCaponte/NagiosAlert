@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="redes3.proyecto.nagiosalert.MainActivity" >
+    <item
+        android:id="@+id/next"
+        android:icon="@drawable/next_bar"
+        app:showAsAction="ifRoom"
+        android:title="@string/app_name">
+    </item>
+
+</menu>

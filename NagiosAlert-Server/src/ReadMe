@@ -1,0 +1,141 @@
+Universidad Simón Bolívar
+Caracas, 29 de octubre del 2014
+
+Materia: CI-5833: Redes III
+
+Autores: 
+	Carlos Aponte – 09-10041
+	Aileen Moreno – 09-10562
+
+Proyecto: Nagios Alert V 1.0
+
+-------
+INDICE |
+-------
+
+	1) Uso General 
+	2) Instalación y configuración
+	3) Contenido del Paquete	
+	4) Observaciones
+	5) Desarrollo futuro	
+
+
+
+----------------
+1) USO GENERAL	|
+----------------
+
+	El proyecto Nagios Alert consiste en una aplicación móvil para dispositivos Android 
+	que permite acceder  a los datos de un servidor Nagios, y por ende al monitoreo de
+	los host y servicios de una red. 
+
+	Este proyecto esta constituido por dos piezas de software, la primera una
+	aplicación para dispositivos con sistema operativo Android que permite cuestionar
+	a un servidor sobre el estado de la red y mostrar dicha información en una interfaz 
+	amigable y similar a la presente en la interfaz web original de Nagios. Por otro lado 
+	tenemos un servidor web basado en servlets de Java, el cual parsea los archivos de 
+	estado de Nagios y los envia a los clientes autorizados que lo soliciten. 
+
+---------------------------------------
+2) Instalación	y Configuración |
+---------------------------------------
+	
+	A la hora de instalar la aplicación en el dispositivo móvil se deben seguir los siguientes
+	pasos:
+
+		- Habilitar la instalación de APK por parte de terceros, esto desde el menú de 
+		configuración del dispositivo.
+		- Transferir el APK contenido en este paquete al dispositivo.
+		- Seleccionar dicho APK en el dispositivo y seleccionar la opción de instalación.
+
+	Por su parte, para poner en marcha el servidor se debe:
+
+		- Copiar la carpeta del servidor contenida en este paquete al servidor o equipo
+		en el que se este corriendo el servidor de Nagios, o en su defecto que este en 
+		un equipo que reciba constantemente una copia del archivo "status.dat" del servidor
+		Nagios. 
+
+		- Modificar el archivo de configuración que se encuentra en la carpeta del servidor 
+		y especificar la ruta absoluta del archivo "status.dat"de nuestro servidor Nagios.
+
+		- Asegurar que ese archivo sea accesible para nuestro servidor.
+
+		- Poner en marcha un servidor web como Apache o Glassfish, y seguidamente arrancar
+		 nuestro servidor de Nagios Alert.
+
+-------------------------
+3) Contenido del Paquete |
+-------------------------
+
+
+		-- NagiosAlert (Aplicación móvil): paquete que contiene todas las clases y librerías necesarias para la aplicación
+			para dispositivos con sistema operativo Android, en este paquete las carpetas y archivos mas resaltantes
+			son:
+			
+				*SplashScreen.java : clase que implementa la visualizacion de la pantalla principal del app.
+				
+				*MainActivity.java : clase que implementa el login en la aplicacion
+				
+				*GCM_Activity.java : clase que implementa los metodos necesarios para que funcione la comunicacion 
+				con el servidor  google,  lo anterior hace posible el envio de notificaciones al dispositivo movil
+				
+				*GCMBroadcastReceiver.java : 
+				
+				*GCMIntentService.java : servlet para el envio del estado actual del sistema al usuario.
+				
+				*RefreshActivity.java :  implementa el listado de host que envia el servidor (especificando cada atributo)
+				
+				*ServiceActivity.java : implementacion del listado de servicios de acuerdo al host, especificacion una serie de atributos
+
+				*servicio.java :  implementa la clase o tipo servicio
+				
+				*host.java : implementa la clase o tipo host
+				
+				*envio.java :implementa la clase o tipo envio
+
+		-- Server-NagiosAlert (Servidor): paquete que contiene todas las clases y librerías necesarias para el servidor de
+			NagiosAler, en este paquete las carpetas y archivos de mas importancia son:
+
+			Src --> En esta carpeta se encuentran los .java de todas las clases implementadas, asi como los
+				servlets que son utilizados por el el servidor web para el envío y recepción de la información.
+
+				*Actualizar.java : servlet para el envio del estado actual del sistema al usuario.
+				*Llaves.java: servlet para el intercambio de llaves publicas entre un usuario y el servidor.
+				*Host.java: clase que trabaja con los host de Nagios y sus atributos.
+				*Servicio.java: clase que trabaja con los servicios de Nagios y sus atributos.
+				*Key.java: clase que trabaja con las llaves RSA del servidor.
+				*Parser.java: clase que implementa funciones para analizar los archivos de Nagios y obtener el estado
+					     de los hosts.
+
+			Web Content --> En esta carpeta, dentro de la subcarpeta Web-Inf se encuentra la librería GSON,
+					dicha librería es una implementación realizada por Google que permite un manejo
+					mucho mas sencillo y eficaz del tipo de objeto JSon, el cual es muy usado en Java
+					para aplicaciones web.
+
+
+
+-----------------
+4) Observaciones |
+-----------------
+
+		- A la hora de ejecutar la aplicación movil se debe proporcionar la dirección web o en 
+		su defecto la dirección IP donde se encuentra el servidor de Nagios Alert.
+
+		- EL servidor NagiosAlert puede no estar en el mismo equipo que el servidor de Nagios, lo
+		que si es indispensable es que tenga acceso al archivo "status.dat" del servidor de Nagios, o
+		en su defecto a una copia actualizada del mismo.
+
+
+
+---------------------
+5) Desarrollo Futuro |
+---------------------
+
+	Actualmente la aplicación y  el servidor envian la información sin cifrar y sin tener ningún tipo de
+	autenticación. Se espera para la próxima entrega usar criptografía de clave asimétrica usando RSA 
+	para que la información se envíe cifrada entre los dos entes. Así mismo, se espera realizar la autenticación
+	del usuario contra el servidor Nagios mediante una solicitud de acceso http desde el servidor de NagiosAlert
+	hacia el servidor Nagios; los datos para este proceso serán enviados cifrados luego de que se produzca le inter-
+	cambio de certificados, algo similar al Handshacke que realiza TLS.
+
+
