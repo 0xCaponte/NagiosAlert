@@ -101,7 +101,6 @@ public class GCM_Activity extends Activity {
 	        throw new RuntimeException("Could not get package name: " + e);
 	    }
 	}
-	
 	public SharedPreferences getGCMPreferences(Context context) {
 	    return getSharedPreferences(GCM_Activity.class.getSimpleName(),
 	            Context.MODE_PRIVATE);
