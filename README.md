@@ -1,15 +1,12 @@
 # NagiosAlert
 
 An Android application developed as a class project at Simon Bolivar University (Venezuela). 
-This app allow you to monitor the status of the clients of your android server and their services.
+This app allow you to monitor the status of the clients of your Nagios server and their services.
 
 Authors
 --------
 Carlos Aponte & Aileen Moreno
 
-Status 
-------
-We will translate and make this project compatible with Android Studio as soon as posible
 
 Contents
 ---------
